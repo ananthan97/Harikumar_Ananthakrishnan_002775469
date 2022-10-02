@@ -151,6 +151,7 @@ public class AddEmployee extends javax.swing.JPanel {
 
         PhotoLabel.setText("Photo");
 
+        imgDisplayLabel.setBackground(new java.awt.Color(255, 255, 255));
         imgDisplayLabel.setOpaque(true);
 
         BrowseButton.setText("Browse");
