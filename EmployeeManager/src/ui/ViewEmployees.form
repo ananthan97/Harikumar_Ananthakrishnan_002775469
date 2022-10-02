@@ -21,16 +21,56 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jScrollPane1" max="32767" attributes="0"/>
                   <Group type="102" attributes="0">
-                      <Component id="jLabel1" pref="888" max="32767" attributes="0"/>
+                      <Component id="jLabel1" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="ViewButton" linkSize="1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="DeleteButton" linkSize="1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="ViewButton" linkSize="1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="DeleteButton" linkSize="1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                              <Component id="Update" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="NameLabel" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="EmployeeIDLabel" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="AgeLabel" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="GenderLabel" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="StartDateLabel" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="LevelLabel" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="TeamInfoLabel" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="PositionTitleLabel" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="CellPhoneNumberLabel" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                                  <Component id="EmailAddressLabel" alignment="0" min="-2" pref="150" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="EmployeeIDTextField" max="32767" attributes="0"/>
+                                  <Component id="AgeTextField" max="32767" attributes="0"/>
+                                  <Component id="GenderTextField" max="32767" attributes="0"/>
+                                  <Component id="StartDateTextField" max="32767" attributes="0"/>
+                                  <Component id="LevelTextField" max="32767" attributes="0"/>
+                                  <Component id="TeamInfoTextField" max="32767" attributes="0"/>
+                                  <Component id="PositionTitleTextField" max="32767" attributes="0"/>
+                                  <Component id="CellPhoneNumberTextField" max="32767" attributes="0"/>
+                                  <Component id="EmailAddressTextField" pref="200" max="32767" attributes="0"/>
+                                  <Component id="NameTextField" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="0" pref="564" max="32767" attributes="0"/>
                   </Group>
               </Group>
+          </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace pref="488" max="32767" attributes="0"/>
+              <Component id="PhotoLabel" min="-2" pref="150" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="PhotoDispLabel" min="-2" pref="127" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="182" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -45,8 +85,67 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="ViewButton" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="DeleteButton" linkSize="2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="Update" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="587" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="PhotoLabel" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Component id="PhotoDispLabel" min="-2" pref="78" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="22" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="NameLabel" min="-2" pref="30" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="8" pref="8" max="-2" attributes="0"/>
+                      <Component id="NameTextField" min="-2" pref="30" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="EmployeeIDTextField" max="32767" attributes="0"/>
+                  <Component id="EmployeeIDLabel" min="-2" pref="30" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="AgeTextField" alignment="0" max="32767" attributes="0"/>
+                  <Component id="AgeLabel" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="GenderTextField" alignment="0" max="32767" attributes="0"/>
+                  <Component id="GenderLabel" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="StartDateTextField" alignment="0" max="32767" attributes="0"/>
+                  <Component id="StartDateLabel" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="LevelTextField" alignment="0" max="32767" attributes="0"/>
+                  <Component id="LevelLabel" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="TeamInfoTextField" alignment="0" max="32767" attributes="0"/>
+                  <Component id="TeamInfoLabel" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="PositionTitleTextField" alignment="0" max="32767" attributes="0"/>
+                  <Component id="PositionTitleLabel" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="CellPhoneNumberTextField" alignment="0" max="32767" attributes="0"/>
+                  <Component id="CellPhoneNumberLabel" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="EmailAddressTextField" alignment="0" max="32767" attributes="0"/>
+                  <Component id="EmailAddressLabel" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -165,6 +264,100 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DeleteButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="NameLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Name"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="NameTextField">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NameTextFieldActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="EmployeeIDLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Employee ID"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="EmployeeIDTextField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="AgeLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Age"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="AgeTextField">
+    </Component>
+    <Component class="javax.swing.JTextField" name="GenderTextField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="GenderLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Gender"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="StartDateTextField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="StartDateLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Start date"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="LevelTextField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="LevelLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Level"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="TeamInfoTextField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="TeamInfoLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Team Info"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="PositionTitleLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Position title"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="PositionTitleTextField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="CellPhoneNumberLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cell phone number "/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="CellPhoneNumberTextField">
+    </Component>
+    <Component class="javax.swing.JLabel" name="EmailAddressLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="email address"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="EmailAddressTextField">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EmailAddressTextFieldActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="PhotoLabel">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Photo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="PhotoDispLabel">
+      <Properties>
+        <Property name="opaque" type="boolean" value="true"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="Update">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Update"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
