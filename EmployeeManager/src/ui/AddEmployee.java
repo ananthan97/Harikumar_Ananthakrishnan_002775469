@@ -352,7 +352,6 @@ public class AddEmployee extends javax.swing.JPanel {
         employee.setCellPhoneNumber(CellPhoneNumber);
         employee.setEmail(email);
         employee.setPhoto(Photo);
-        
         JOptionPane.showMessageDialog(this, "New Employee Added");
         
         NameTextField.setText("");

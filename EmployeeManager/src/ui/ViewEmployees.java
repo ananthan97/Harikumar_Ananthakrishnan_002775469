@@ -4,6 +4,11 @@
  */
 package ui;
 
+import javax.swing.ImageIcon;
+import javax.swing.table.DefaultTableModel;
+import model.Employee;
+import model.Employees;
+
 /**
  *
  * @author Ananthakrishnan H
@@ -13,8 +18,11 @@ public class ViewEmployees extends javax.swing.JPanel {
     /**
      * Creates new form ViewEmployees
      */
-    public ViewEmployees() {
+    Employees EmployeeList;
+    public ViewEmployees(Employees EmployeeList) {
         initComponents();
+        this.EmployeeList = EmployeeList;
+        populateTable();
     }
 
     /**
@@ -26,19 +34,75 @@ public class ViewEmployees extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        EmployeeTable = new javax.swing.JTable();
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("View Employees");
+
+        EmployeeTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Name", "Employee ID", "Age", "Gender", "Start Date", "Level", "Team info", "Position Title", "Cell phone Number ", "Email address", "Photo"
+            }
+        ));
+        jScrollPane1.setViewportView(EmployeeTable);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 888, Short.MAX_VALUE))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(597, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable EmployeeTable;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
+
+    private void populateTable() {
+        DefaultTableModel model = (DefaultTableModel) EmployeeTable.getModel();
+        model.setRowCount(0);
+        for(Employee employee : EmployeeList.getEmployeeList()){
+            
+            Object[] row = new Object[11];
+            row[0] = employee.getName();
+            row[1] = employee.getEmployeeID();
+            row[2] = employee.getAge();
+            row[3] = employee.getGender();
+            row[4] = employee.getStartDate();
+            row[5] = employee.getLevel();
+            row[6] = employee.getTeamInfo();
+            row[7] = employee.getPositionTitle();
+            row[8] = employee.getCellPhoneNumber();
+            row[9] = employee.getEmail();
+            row[10] = employee.getPhoto();
+            
+            model.addRow(row);
+        }
+    }
 }

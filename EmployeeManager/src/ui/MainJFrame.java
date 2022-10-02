@@ -137,6 +137,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void viewEmployeeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewEmployeeButtonActionPerformed
         // TODO add your handling code here:
+        ViewEmployees viewEmployees = new ViewEmployees(EmployeeList);
+        jSplitPane1.setRightComponent(viewEmployees);
     }//GEN-LAST:event_viewEmployeeButtonActionPerformed
 
     /**
