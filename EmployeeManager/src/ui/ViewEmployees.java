@@ -299,8 +299,8 @@ public class ViewEmployees extends javax.swing.JPanel {
             return;
         }
         
-        DefaultTableModel model = (DefaultTableModel) EmployeeTable.getModel();
-        Employee selectedEmployee = (Employee) model.getValueAt(selectedRowIndex, 0);
+//        DefaultTableModel model = (DefaultTableModel) EmployeeTable.getModel();
+        Employee selectedEmployee = (Employee) EmployeeTable.getValueAt(selectedRowIndex, 0);
         NameTextField.setText(selectedEmployee.getName());
         EmployeeIDTextField.setText(selectedEmployee.getEmployeeID());
         AgeTextField.setText(String.valueOf( selectedEmployee.getAge()));
