@@ -315,8 +315,29 @@ public class ViewEmployees extends javax.swing.JPanel {
 
     private void UpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateActionPerformed
         // TODO add your handling code here:
+        int selectedRowIndex = EmployeeTable.getSelectedRow();
+        if(selectedRowIndex < 0){
+            JOptionPane.showMessageDialog(this, "Please select a row to Update");
+            return;
+        }
+        
+        DefaultTableModel model = (DefaultTableModel) EmployeeTable.getModel();
+        Employee selectedEmployee = (Employee) model.getValueAt(selectedRowIndex, 0);
+        
+        selectedEmployee.setName(NameTextField.getText());
+        selectedEmployee.setEmployeeID(EmployeeIDTextField.getText());
+        selectedEmployee.setAge(Integer.parseInt(AgeTextField.getText()));
+        selectedEmployee.setGender(GenderTextField.getText());
+        selectedEmployee.setStartDate(StartDateTextField.getText());
+        selectedEmployee.setLevel(LevelTextField.getText());
+        selectedEmployee.setTeamInfo(TeamInfoTextField.getText());
+        selectedEmployee.setPositionTitle(PositionTitleTextField.getText());
+        selectedEmployee.setCellPhoneNumber(Double.parseDouble(CellPhoneNumberTextField.getText()));
+        selectedEmployee.setEmail(EmailAddressTextField.getText());
         
         
+        
+        populateTable();
         
     }//GEN-LAST:event_UpdateActionPerformed
 
