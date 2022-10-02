@@ -123,14 +123,19 @@ public class ViewEmployees extends javax.swing.JPanel {
 
     private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
         // TODO add your handling code here:
-//        int selectedRowIndex = EmployeeTable.getSelectedRow();
-//        if(selectedRowIndex < 0){
-//            JOptionPane.showMessageDialog(this, "Please select a row to delete");
-//            return;
-//        }
+        int selectedRowIndex = EmployeeTable.getSelectedRow();
+        System.out.println(selectedRowIndex);
+        if(selectedRowIndex < 0){
+            JOptionPane.showMessageDialog(this, "Please select a row to delete");
+            return;
+        }
+        
+        DefaultTableModel model = (DefaultTableModel) EmployeeTable.getModel();
+        Employee selectedEmployee = (Employee) model.getValueAt(selectedRowIndex,0);
+        EmployeeList.deleteEmployee(selectedEmployee);
+        JOptionPane.showMessageDialog(this, "Vital signs deleted");
 //        
-//        DefaultTableModel model = (DefaultTableModel)EmployeeTable.getSelectedRow();
-//        Employee selectedEmployee = ()
+        populateTable();
     }//GEN-LAST:event_DeleteButtonActionPerformed
 
 
@@ -150,7 +155,7 @@ public class ViewEmployees extends javax.swing.JPanel {
         for (Employee employee : EmployeeList.getEmployeeList()) {
 
             Object[] row = new Object[11];
-            row[0] = employee.getName();
+            row[0] = employee;
             row[1] = employee.getEmployeeID();
             row[2] = employee.getAge();
             row[3] = employee.getGender();
@@ -167,7 +172,6 @@ public class ViewEmployees extends javax.swing.JPanel {
             EmployeeTable.getColumn("Photo").setCellRenderer(new myTableCellRenderer());
             row[10] = imageLabel;
 
-            System.out.println(row[10]);
             model.addRow(row);
         }
     }

@@ -30,4 +30,8 @@ public class Employees {
         EmployeeList.add(newEmployee);
         return newEmployee;
     }
+    
+    public void deleteEmployee(Employee emp){
+        EmployeeList.remove(emp);
+    }
 }
