@@ -10,9 +10,11 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
+import javax.swing.table.TableRowSorter;
 import model.Employee;
 import model.Employees;
 
@@ -70,6 +72,8 @@ public class ViewEmployees extends javax.swing.JPanel {
         PhotoLabel = new javax.swing.JLabel();
         PhotoDispLabel = new javax.swing.JLabel();
         Update = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        SearchTextField = new javax.swing.JTextField();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -145,6 +149,22 @@ public class ViewEmployees extends javax.swing.JPanel {
             }
         });
 
+        jLabel2.setText("Search");
+
+        SearchTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchTextFieldActionPerformed(evt);
+            }
+        });
+        SearchTextField.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                SearchTextFieldKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                SearchTextFieldKeyReleased(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -163,7 +183,11 @@ public class ViewEmployees extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addComponent(DeleteButton)
                                 .addGap(37, 37, 37)
-                                .addComponent(Update))
+                                .addComponent(Update)
+                                .addGap(52, 52, 52)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(SearchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(NameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -188,9 +212,9 @@ public class ViewEmployees extends javax.swing.JPanel {
                                     .addComponent(CellPhoneNumberTextField)
                                     .addComponent(EmailAddressTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                                     .addComponent(NameTextField))))
-                        .addGap(0, 564, Short.MAX_VALUE))))
+                        .addGap(0, 389, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(488, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(PhotoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PhotoDispLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -210,7 +234,9 @@ public class ViewEmployees extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(ViewButton)
                     .addComponent(DeleteButton)
-                    .addComponent(Update))
+                    .addComponent(Update)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SearchTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(11, 11, 11)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PhotoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -284,7 +310,9 @@ public class ViewEmployees extends javax.swing.JPanel {
         PositionTitleTextField.setText(selectedEmployee.getPositionTitle());
         CellPhoneNumberTextField.setText(String.valueOf(selectedEmployee.getCellPhoneNumber()));
         EmailAddressTextField.setText(selectedEmployee.getEmail());
-        PhotoDispLabel.setIcon(new ImageIcon(selectedEmployee.getPhoto()));
+        ImageIcon imageIcon = new ImageIcon(selectedEmployee.getPhoto());
+        Image image = imageIcon.getImage().getScaledInstance(PhotoDispLabel.getWidth(), PhotoDispLabel.getHeight(), Image.SCALE_SMOOTH);
+        PhotoDispLabel.setIcon(new ImageIcon(image));
         
         
     }//GEN-LAST:event_ViewButtonActionPerformed
@@ -341,6 +369,26 @@ public class ViewEmployees extends javax.swing.JPanel {
         
     }//GEN-LAST:event_UpdateActionPerformed
 
+    private void SearchTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SearchTextFieldActionPerformed
+
+    private void SearchTextFieldKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SearchTextFieldKeyPressed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) EmployeeTable.getModel();
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(model);
+        EmployeeTable.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(SearchTextField.getText().trim()));
+    }//GEN-LAST:event_SearchTextFieldKeyPressed
+
+    private void SearchTextFieldKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SearchTextFieldKeyReleased
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) EmployeeTable.getModel();
+        TableRowSorter<DefaultTableModel> tr = new TableRowSorter<DefaultTableModel>(model);
+        EmployeeTable.setRowSorter(tr);
+        tr.setRowFilter(RowFilter.regexFilter(SearchTextField.getText().trim()));
+    }//GEN-LAST:event_SearchTextFieldKeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AgeLabel;
@@ -363,6 +411,7 @@ public class ViewEmployees extends javax.swing.JPanel {
     private javax.swing.JLabel PhotoLabel;
     private javax.swing.JLabel PositionTitleLabel;
     private javax.swing.JTextField PositionTitleTextField;
+    private javax.swing.JTextField SearchTextField;
     private javax.swing.JLabel StartDateLabel;
     private javax.swing.JTextField StartDateTextField;
     private javax.swing.JLabel TeamInfoLabel;
@@ -370,6 +419,7 @@ public class ViewEmployees extends javax.swing.JPanel {
     private javax.swing.JButton Update;
     private javax.swing.JButton ViewButton;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 
