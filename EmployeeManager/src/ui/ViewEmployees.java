@@ -4,8 +4,15 @@
  */
 package ui;
 
+import java.awt.Component;
+import java.awt.Image;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumn;
 import model.Employee;
 import model.Employees;
 
@@ -19,6 +26,7 @@ public class ViewEmployees extends javax.swing.JPanel {
      * Creates new form ViewEmployees
      */
     Employees EmployeeList;
+
     public ViewEmployees(Employees EmployeeList) {
         initComponents();
         this.EmployeeList = EmployeeList;
@@ -37,6 +45,8 @@ public class ViewEmployees extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         EmployeeTable = new javax.swing.JTable();
+        ViewButton = new javax.swing.JButton();
+        DeleteButton = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -55,6 +65,20 @@ public class ViewEmployees extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(EmployeeTable);
 
+        ViewButton.setText("View");
+        ViewButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ViewButtonActionPerformed(evt);
+            }
+        });
+
+        DeleteButton.setText("Delete");
+        DeleteButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -62,33 +86,69 @@ public class ViewEmployees extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 888, Short.MAX_VALUE))
-                .addContainerGap())
+                    .addComponent(jScrollPane1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 888, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(ViewButton)
+                        .addGap(18, 18, 18)
+                        .addComponent(DeleteButton)
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {DeleteButton, ViewButton});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(597, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ViewButton)
+                    .addComponent(DeleteButton))
+                .addContainerGap(587, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {DeleteButton, ViewButton});
+
     }// </editor-fold>//GEN-END:initComponents
+
+    private void ViewButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ViewButtonActionPerformed
+
+    private void DeleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteButtonActionPerformed
+        // TODO add your handling code here:
+//        int selectedRowIndex = EmployeeTable.getSelectedRow();
+//        if(selectedRowIndex < 0){
+//            JOptionPane.showMessageDialog(this, "Please select a row to delete");
+//            return;
+//        }
+//        
+//        DefaultTableModel model = (DefaultTableModel)EmployeeTable.getSelectedRow();
+//        Employee selectedEmployee = ()
+    }//GEN-LAST:event_DeleteButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton DeleteButton;
     private javax.swing.JTable EmployeeTable;
+    private javax.swing.JButton ViewButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 
     private void populateTable() {
         DefaultTableModel model = (DefaultTableModel) EmployeeTable.getModel();
+        Object[] newIdentifiers = new Object[]{"Name", "Employee ID", "Age", "Gender", "Start Date", "Level", "Team info", "Position Title", "Cell phone", "Email", "Photo"};
+        model.setColumnIdentifiers(newIdentifiers);
         model.setRowCount(0);
-        for(Employee employee : EmployeeList.getEmployeeList()){
-            
+        for (Employee employee : EmployeeList.getEmployeeList()) {
+
             Object[] row = new Object[11];
             row[0] = employee.getName();
             row[1] = employee.getEmployeeID();
@@ -100,9 +160,28 @@ public class ViewEmployees extends javax.swing.JPanel {
             row[7] = employee.getPositionTitle();
             row[8] = employee.getCellPhoneNumber();
             row[9] = employee.getEmail();
-            row[10] = employee.getPhoto();
-            
+            ImageIcon imageIcon = new ImageIcon(employee.getPhoto());
+            Image Icon = imageIcon.getImage().getScaledInstance(60, 60, Image.SCALE_SMOOTH);
+            JLabel imageLabel = new JLabel();
+            imageLabel.setIcon(new ImageIcon(Icon));
+            EmployeeTable.getColumn("Photo").setCellRenderer(new myTableCellRenderer());
+            row[10] = imageLabel;
+
+            System.out.println(row[10]);
             model.addRow(row);
         }
+    }
+
+    class myTableCellRenderer implements TableCellRenderer {
+
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
+            TableColumn tb = EmployeeTable.getColumn("Photo");
+            tb.setMaxWidth(60);
+            tb.setMinWidth(60);
+            EmployeeTable.setRowHeight(60);
+            return (Component) value;
+        }
+
     }
 }
