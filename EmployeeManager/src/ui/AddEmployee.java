@@ -11,6 +11,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import model.Employee;
+import model.Employees;
 
 /**
  *
@@ -21,10 +22,11 @@ public class AddEmployee extends javax.swing.JPanel {
     /**
      * Creates new form AddEmployee
      */
-    Employee employee;
-    public AddEmployee(Employee employee) {
+    Employees EmployeeList;
+    Image image;
+    public AddEmployee(Employees EmployeeList) {
         initComponents();
-        this.employee = employee;
+        this.EmployeeList = EmployeeList;
         
     }
 
@@ -45,22 +47,23 @@ public class AddEmployee extends javax.swing.JPanel {
         AgeTextField = new javax.swing.JTextField();
         AgeLabel = new javax.swing.JLabel();
         GenderLabel = new javax.swing.JLabel();
-        NameTextField3 = new javax.swing.JTextField();
+        GenderTextField = new javax.swing.JTextField();
         StartDateLabel = new javax.swing.JLabel();
-        NameTextField4 = new javax.swing.JTextField();
+        StartDateTextField = new javax.swing.JTextField();
         LevelLabel = new javax.swing.JLabel();
-        NameTextField5 = new javax.swing.JTextField();
-        NameTextField6 = new javax.swing.JTextField();
+        LevelTextField = new javax.swing.JTextField();
+        TeamInfoTextField = new javax.swing.JTextField();
         TeamInfoLabel = new javax.swing.JLabel();
         PositionLabel = new javax.swing.JLabel();
-        NameTextField7 = new javax.swing.JTextField();
+        PositionTitleTextField = new javax.swing.JTextField();
         PhoneNumberLabel = new javax.swing.JLabel();
-        NameTextField8 = new javax.swing.JTextField();
+        PhoneNumberTextField = new javax.swing.JTextField();
         EmailLabel = new javax.swing.JLabel();
-        NameTextField9 = new javax.swing.JTextField();
+        EmailTextField = new javax.swing.JTextField();
         PhotoLabel = new javax.swing.JLabel();
         imgDisplayLabel = new javax.swing.JLabel();
         BrowseButton = new javax.swing.JButton();
+        SaveButton = new javax.swing.JButton();
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -92,31 +95,31 @@ public class AddEmployee extends javax.swing.JPanel {
 
         GenderLabel.setText("Gender");
 
-        NameTextField3.addActionListener(new java.awt.event.ActionListener() {
+        GenderTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NameTextField3ActionPerformed(evt);
+                GenderTextFieldActionPerformed(evt);
             }
         });
 
         StartDateLabel.setText("Start Date");
 
-        NameTextField4.addActionListener(new java.awt.event.ActionListener() {
+        StartDateTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NameTextField4ActionPerformed(evt);
+                StartDateTextFieldActionPerformed(evt);
             }
         });
 
         LevelLabel.setText("Level");
 
-        NameTextField5.addActionListener(new java.awt.event.ActionListener() {
+        LevelTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NameTextField5ActionPerformed(evt);
+                LevelTextFieldActionPerformed(evt);
             }
         });
 
-        NameTextField6.addActionListener(new java.awt.event.ActionListener() {
+        TeamInfoTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NameTextField6ActionPerformed(evt);
+                TeamInfoTextFieldActionPerformed(evt);
             }
         });
 
@@ -124,25 +127,25 @@ public class AddEmployee extends javax.swing.JPanel {
 
         PositionLabel.setText("Position Title");
 
-        NameTextField7.addActionListener(new java.awt.event.ActionListener() {
+        PositionTitleTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NameTextField7ActionPerformed(evt);
+                PositionTitleTextFieldActionPerformed(evt);
             }
         });
 
         PhoneNumberLabel.setText("Cell Phone Number");
 
-        NameTextField8.addActionListener(new java.awt.event.ActionListener() {
+        PhoneNumberTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NameTextField8ActionPerformed(evt);
+                PhoneNumberTextFieldActionPerformed(evt);
             }
         });
 
         EmailLabel.setText("Email Address");
 
-        NameTextField9.addActionListener(new java.awt.event.ActionListener() {
+        EmailTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NameTextField9ActionPerformed(evt);
+                EmailTextFieldActionPerformed(evt);
             }
         });
 
@@ -154,6 +157,13 @@ public class AddEmployee extends javax.swing.JPanel {
         BrowseButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 BrowseButtonActionPerformed(evt);
+            }
+        });
+
+        SaveButton.setText("Save");
+        SaveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveButtonActionPerformed(evt);
             }
         });
 
@@ -182,21 +192,25 @@ public class AddEmployee extends javax.swing.JPanel {
                             .addComponent(PhotoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(73, 73, 73)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(NameTextField8, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(NameTextField7, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(NameTextField6, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(NameTextField5, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(NameTextField4, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                            .addComponent(NameTextField3, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(PhoneNumberTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(PositionTitleTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(TeamInfoTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(LevelTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(StartDateTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(GenderTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                             .addComponent(AgeTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                             .addComponent(EmpIdTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                             .addComponent(NameTextField)
-                            .addComponent(NameTextField9, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                            .addComponent(EmailTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                             .addComponent(imgDisplayLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(40, 40, 40)
                         .addComponent(BrowseButton)
                         .addGap(0, 175, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(325, 325, 325)
+                .addComponent(SaveButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -221,36 +235,38 @@ public class AddEmployee extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(GenderLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NameTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(GenderTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(StartDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NameTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(StartDateTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(LevelLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NameTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(LevelTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(TeamInfoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NameTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(TeamInfoTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(PositionLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NameTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(PositionTitleTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(PhoneNumberLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NameTextField8, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(PhoneNumberTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(EmailLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NameTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(EmailTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(PhotoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(imgDisplayLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(424, Short.MAX_VALUE))
+                .addGap(72, 72, 72)
+                .addComponent(SaveButton)
+                .addContainerGap(80, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -266,33 +282,33 @@ public class AddEmployee extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_AgeTextFieldActionPerformed
 
-    private void NameTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameTextField3ActionPerformed
+    private void GenderTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenderTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NameTextField3ActionPerformed
+    }//GEN-LAST:event_GenderTextFieldActionPerformed
 
-    private void NameTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameTextField4ActionPerformed
+    private void StartDateTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartDateTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NameTextField4ActionPerformed
+    }//GEN-LAST:event_StartDateTextFieldActionPerformed
 
-    private void NameTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameTextField5ActionPerformed
+    private void LevelTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LevelTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NameTextField5ActionPerformed
+    }//GEN-LAST:event_LevelTextFieldActionPerformed
 
-    private void NameTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameTextField6ActionPerformed
+    private void TeamInfoTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TeamInfoTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NameTextField6ActionPerformed
+    }//GEN-LAST:event_TeamInfoTextFieldActionPerformed
 
-    private void NameTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameTextField7ActionPerformed
+    private void PositionTitleTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PositionTitleTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NameTextField7ActionPerformed
+    }//GEN-LAST:event_PositionTitleTextFieldActionPerformed
 
-    private void NameTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameTextField8ActionPerformed
+    private void PhoneNumberTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhoneNumberTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NameTextField8ActionPerformed
+    }//GEN-LAST:event_PhoneNumberTextFieldActionPerformed
 
-    private void NameTextField9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NameTextField9ActionPerformed
+    private void EmailTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailTextFieldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_NameTextField9ActionPerformed
+    }//GEN-LAST:event_EmailTextFieldActionPerformed
 
     private void BrowseButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrowseButtonActionPerformed
         // TODO add your handling code here:
@@ -305,10 +321,55 @@ public class AddEmployee extends javax.swing.JPanel {
             String selectedImageFilePath = selectedImageFile.getAbsolutePath();
             JOptionPane.showMessageDialog(null, selectedImageFilePath);
             ImageIcon imageIcon = new ImageIcon(selectedImageFilePath);
-            Image image = imageIcon.getImage().getScaledInstance(imgDisplayLabel.getWidth(), imgDisplayLabel.getHeight(), Image.SCALE_SMOOTH);
+            image = imageIcon.getImage().getScaledInstance(imgDisplayLabel.getWidth(), imgDisplayLabel.getHeight(), Image.SCALE_SMOOTH);
             imgDisplayLabel.setIcon(new ImageIcon(image));
         }
     }//GEN-LAST:event_BrowseButtonActionPerformed
+
+    private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
+        // TODO add your handling code here:
+        String Name = NameTextField.getText();
+        String EmployeeId = EmpIdTextField.getText();
+        int Age = Integer.parseInt(AgeTextField.getText());
+        String Gender = GenderTextField.getText();
+        String StartDate = StartDateTextField.getText();
+        String Level = LevelTextField.getText();
+        String TeamInfo = TeamInfoTextField.getText();
+        String PostionTitle = PositionTitleTextField.getText();
+        double CellPhoneNumber = Double.parseDouble(PhoneNumberTextField.getText());
+        String email = EmailTextField.getText();
+        Image Photo = image;
+        
+        Employee employee = EmployeeList.addNewEmployee();
+        employee.setName(Name);
+        employee.setEmployeeID(EmployeeId);
+        employee.setAge(Age);
+        employee.setGender(Gender);
+        employee.setStartDate(StartDate);
+        employee.setLevel(Level);
+        employee.setTeamInfo(TeamInfo);
+        employee.setPositionTitle(PostionTitle);
+        employee.setCellPhoneNumber(CellPhoneNumber);
+        employee.setEmail(email);
+        employee.setPhoto(Photo);
+        
+        JOptionPane.showMessageDialog(this, "New Employee Added");
+        
+        NameTextField.setText("");
+        EmpIdTextField.setText("");
+        AgeTextField.setText("");
+        GenderTextField.setText("");
+        StartDateTextField.setText("");
+        LevelTextField.setText("");
+        TeamInfoTextField.setText("");
+        PositionTitleTextField.setText("");
+        PhoneNumberTextField.setText("");
+        EmailTextField.setText("");
+        imgDisplayLabel.setIcon(null);
+        imgDisplayLabel.revalidate();
+        
+        
+    }//GEN-LAST:event_SaveButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -316,24 +377,25 @@ public class AddEmployee extends javax.swing.JPanel {
     private javax.swing.JTextField AgeTextField;
     private javax.swing.JButton BrowseButton;
     private javax.swing.JLabel EmailLabel;
+    private javax.swing.JTextField EmailTextField;
     private javax.swing.JTextField EmpIdTextField;
     private javax.swing.JLabel EmployeeIdLabel;
     private javax.swing.JLabel GenderLabel;
+    private javax.swing.JTextField GenderTextField;
     private javax.swing.JLabel LevelLabel;
+    private javax.swing.JTextField LevelTextField;
     private javax.swing.JLabel NameLabel;
     private javax.swing.JTextField NameTextField;
-    private javax.swing.JTextField NameTextField3;
-    private javax.swing.JTextField NameTextField4;
-    private javax.swing.JTextField NameTextField5;
-    private javax.swing.JTextField NameTextField6;
-    private javax.swing.JTextField NameTextField7;
-    private javax.swing.JTextField NameTextField8;
-    private javax.swing.JTextField NameTextField9;
     private javax.swing.JLabel PhoneNumberLabel;
+    private javax.swing.JTextField PhoneNumberTextField;
     private javax.swing.JLabel PhotoLabel;
     private javax.swing.JLabel PositionLabel;
+    private javax.swing.JTextField PositionTitleTextField;
+    private javax.swing.JButton SaveButton;
     private javax.swing.JLabel StartDateLabel;
+    private javax.swing.JTextField StartDateTextField;
     private javax.swing.JLabel TeamInfoLabel;
+    private javax.swing.JTextField TeamInfoTextField;
     private javax.swing.JLabel imgDisplayLabel;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables

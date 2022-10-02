@@ -39,16 +39,16 @@
                       </Group>
                       <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="NameTextField8" pref="200" max="32767" attributes="0"/>
-                          <Component id="NameTextField7" pref="200" max="32767" attributes="0"/>
-                          <Component id="NameTextField6" pref="200" max="32767" attributes="0"/>
-                          <Component id="NameTextField5" pref="200" max="32767" attributes="0"/>
-                          <Component id="NameTextField4" pref="200" max="32767" attributes="0"/>
-                          <Component id="NameTextField3" pref="200" max="32767" attributes="0"/>
+                          <Component id="PhoneNumberTextField" pref="200" max="32767" attributes="0"/>
+                          <Component id="PositionTitleTextField" pref="200" max="32767" attributes="0"/>
+                          <Component id="TeamInfoTextField" pref="200" max="32767" attributes="0"/>
+                          <Component id="LevelTextField" pref="200" max="32767" attributes="0"/>
+                          <Component id="StartDateTextField" pref="200" max="32767" attributes="0"/>
+                          <Component id="GenderTextField" pref="200" max="32767" attributes="0"/>
                           <Component id="AgeTextField" pref="200" max="32767" attributes="0"/>
                           <Component id="EmpIdTextField" pref="200" max="32767" attributes="0"/>
                           <Component id="NameTextField" max="32767" attributes="0"/>
-                          <Component id="NameTextField9" pref="200" max="32767" attributes="0"/>
+                          <Component id="EmailTextField" pref="200" max="32767" attributes="0"/>
                           <Component id="imgDisplayLabel" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
@@ -57,6 +57,11 @@
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="325" max="-2" attributes="0"/>
+              <Component id="SaveButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -86,37 +91,37 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="GenderLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="NameTextField3" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="GenderTextField" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="StartDateLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="NameTextField4" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="StartDateTextField" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="LevelLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="NameTextField5" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="LevelTextField" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="TeamInfoLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="NameTextField6" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="TeamInfoTextField" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="PositionLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="NameTextField7" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="PositionTitleTextField" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="PhoneNumberLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="NameTextField8" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="PhoneNumberTextField" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="EmailLabel" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
-                          <Component id="NameTextField9" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
+                          <Component id="EmailTextField" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -125,7 +130,9 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="424" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
+              <Component id="SaveButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="80" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -175,9 +182,9 @@
         <Property name="text" type="java.lang.String" value="Gender"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="NameTextField3">
+    <Component class="javax.swing.JTextField" name="GenderTextField">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NameTextField3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="GenderTextFieldActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="StartDateLabel">
@@ -185,9 +192,9 @@
         <Property name="text" type="java.lang.String" value="Start Date"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="NameTextField4">
+    <Component class="javax.swing.JTextField" name="StartDateTextField">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NameTextField4ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="StartDateTextFieldActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="LevelLabel">
@@ -195,14 +202,14 @@
         <Property name="text" type="java.lang.String" value="Level"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="NameTextField5">
+    <Component class="javax.swing.JTextField" name="LevelTextField">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NameTextField5ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="LevelTextFieldActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JTextField" name="NameTextField6">
+    <Component class="javax.swing.JTextField" name="TeamInfoTextField">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NameTextField6ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TeamInfoTextFieldActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="TeamInfoLabel">
@@ -215,9 +222,9 @@
         <Property name="text" type="java.lang.String" value="Position Title"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="NameTextField7">
+    <Component class="javax.swing.JTextField" name="PositionTitleTextField">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NameTextField7ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PositionTitleTextFieldActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="PhoneNumberLabel">
@@ -225,9 +232,9 @@
         <Property name="text" type="java.lang.String" value="Cell Phone Number"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="NameTextField8">
+    <Component class="javax.swing.JTextField" name="PhoneNumberTextField">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NameTextField8ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PhoneNumberTextFieldActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="EmailLabel">
@@ -235,9 +242,9 @@
         <Property name="text" type="java.lang.String" value="Email Address"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="NameTextField9">
+    <Component class="javax.swing.JTextField" name="EmailTextField">
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NameTextField9ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EmailTextFieldActionPerformed"/>
       </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="PhotoLabel">
@@ -256,6 +263,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="BrowseButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="SaveButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Save"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="SaveButtonActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

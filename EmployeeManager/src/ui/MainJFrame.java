@@ -5,6 +5,7 @@
 package ui;
 
 import model.Employee;
+import model.Employees;
 
 /**
  *
@@ -16,11 +17,11 @@ public class MainJFrame extends javax.swing.JFrame {
      * Creates new form MainJFrame
      */
     
-    Employee employee;
+    Employees EmployeeList;
     public MainJFrame() {
         initComponents();
         
-        employee = new Employee();
+        EmployeeList = new Employees();
        
     }
 
@@ -130,7 +131,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void addEmployeeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEmployeeButtonActionPerformed
         // TODO add your handling code here:
-        AddEmployee addEmployee = new AddEmployee(employee);
+        AddEmployee addEmployee = new AddEmployee(EmployeeList);
         jSplitPane1.setRightComponent(addEmployee);
     }//GEN-LAST:event_addEmployeeButtonActionPerformed
 

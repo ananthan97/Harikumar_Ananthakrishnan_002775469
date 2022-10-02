@@ -19,7 +19,8 @@ public class Employee {
     private String Level;
     private String TeamInfo;
     private String PositionTitle;
-    private String CellPhoneNumber;
+    private double CellPhoneNumber;
+    private String email;
     private Image Photo;
 
     public String getName() {
@@ -86,12 +87,20 @@ public class Employee {
         this.PositionTitle = PositionTitle;
     }
 
-    public String getCellPhoneNumber() {
+    public double getCellPhoneNumber() {
         return CellPhoneNumber;
     }
 
-    public void setCellPhoneNumber(String CellPhoneNumber) {
+    public void setCellPhoneNumber(double CellPhoneNumber) {
         this.CellPhoneNumber = CellPhoneNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public Image getPhoto() {
