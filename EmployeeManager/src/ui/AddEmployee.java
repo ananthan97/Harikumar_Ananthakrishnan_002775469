@@ -6,6 +6,8 @@ package ui;
 
 import java.awt.Image;
 import java.io.File;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -29,6 +31,21 @@ public class AddEmployee extends javax.swing.JPanel {
         this.EmployeeList = EmployeeList;
         
     }
+    public boolean validate(String Order, String value){
+            Pattern pattern = Pattern.compile(Order);
+            Matcher matcher = pattern.matcher(value);
+            boolean matchFound = matcher.find();
+            if(Order.isEmpty()){
+                return false;
+            }
+            else{
+                if(matchFound) {
+                  return true;
+                } else {
+                  return false;
+                }
+            }
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -337,42 +354,150 @@ public class AddEmployee extends javax.swing.JPanel {
         // TODO add your handling code here:
         String Name = NameTextField.getText();
         String EmployeeId = EmpIdTextField.getText();
-        int Age = Integer.parseInt(AgeTextField.getText());
+        String Age = AgeTextField.getText();
         String Gender = GenderTextField.getText();
         String StartDate = StartDateTextField.getText();
         String Level = LevelTextField.getText();
         String TeamInfo = TeamInfoTextField.getText();
         String PostionTitle = PositionTitleTextField.getText();
-        double CellPhoneNumber = Double.parseDouble(PhoneNumberTextField.getText());
+        String CellPhoneNumber = PhoneNumberTextField.getText();
         String email = EmailTextField.getText();
         Image Photo = image;
         
-        Employee employee = EmployeeList.addNewEmployee();
-        employee.setName(Name);
-        employee.setEmployeeID(EmployeeId);
-        employee.setAge(Age);
-        employee.setGender(Gender);
-        employee.setStartDate(StartDate);
-        employee.setLevel(Level);
-        employee.setTeamInfo(TeamInfo);
-        employee.setPositionTitle(PostionTitle);
-        employee.setCellPhoneNumber(CellPhoneNumber);
-        employee.setEmail(email);
-        employee.setPhoto(Photo);
-        JOptionPane.showMessageDialog(this, "New Employee Added");
         
-        NameTextField.setText("");
-        EmpIdTextField.setText("");
-        AgeTextField.setText("");
-        GenderTextField.setText("");
-        StartDateTextField.setText("");
-        LevelTextField.setText("");
-        TeamInfoTextField.setText("");
-        PositionTitleTextField.setText("");
-        PhoneNumberTextField.setText("");
-        EmailTextField.setText("");
-        imgDisplayLabel.setIcon(null);
-        imgDisplayLabel.revalidate();
+        
+        int errorCount = 0;
+        if(validate("^[A-Z].*", Name) && !(Name.isEmpty())){
+            
+        }
+        else{
+            errorCount++;
+            JOptionPane.showMessageDialog(this, "Invalid Name");
+            return;
+        }
+//        
+        if(validate("[0-9]+", EmployeeId) && !(EmployeeId.isEmpty())){
+            
+        }
+        else{
+            errorCount++;
+            JOptionPane.showMessageDialog(this, "Invalid Employee Id");
+            return;
+        }
+        
+        if(validate("(2[0-9]|[3-5][0-9]|60)", Age)){
+            
+        }
+        else{
+            errorCount++;
+            JOptionPane.showMessageDialog(this, "Invalid Age");
+            return;
+        }
+        
+        if(validate("M|F|O", Gender)){
+            
+        }
+        else{
+            errorCount++;
+            JOptionPane.showMessageDialog(this, "Invalid Gender");
+            return;
+        }
+        
+        if(validate("^(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[13-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:29(\\/|-|\\.)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$", StartDate)){
+            
+        }
+        else{
+            errorCount++;
+            JOptionPane.showMessageDialog(this, "Invalid Date");
+            return;
+        }
+        
+        if(validate("([0-5])", Level)){
+            
+        }
+        else{
+            errorCount++;
+            JOptionPane.showMessageDialog(this, "Invalid Level");
+            return;
+        }
+        
+        if(validate("^[A-Z].*", TeamInfo)){
+            
+        }
+        else{
+            errorCount++;
+            JOptionPane.showMessageDialog(this, "Invalid Team Information");
+            return;
+        }
+        
+        if(validate("^[A-Z].*", PostionTitle)){
+            
+        }
+        else{
+            errorCount++;
+            JOptionPane.showMessageDialog(this, "Invalid Position Title");
+            return;
+        }
+        
+        if(validate("[0-9]+", CellPhoneNumber)){
+            
+        }
+        else{
+            errorCount++;
+            JOptionPane.showMessageDialog(this, "Invalid Phone Number");
+            return;
+        }
+        
+        if(validate("^(.+)@(.+)$", email)){
+            
+        }
+        
+        else{
+            errorCount++;
+            JOptionPane.showMessageDialog(this, "Invalid Email");
+            return;
+        }
+        
+        if(image != null){
+            
+        }
+        else{
+            errorCount++;
+            JOptionPane.showMessageDialog(this, "Please select an image");
+            return;
+        }
+        
+        
+        
+        
+        if(errorCount == 0){
+            Employee employee = EmployeeList.addNewEmployee();
+            employee.setName(Name);
+            employee.setEmployeeID(EmployeeId);
+            employee.setAge(Integer.parseInt(Age));
+            employee.setGender(Gender);
+            employee.setStartDate(StartDate);
+            employee.setLevel(Level);
+            employee.setTeamInfo(TeamInfo);
+            employee.setPositionTitle(PostionTitle);
+            employee.setCellPhoneNumber(Double.parseDouble(CellPhoneNumber));
+            employee.setEmail(email);
+            employee.setPhoto(Photo);
+            JOptionPane.showMessageDialog(this, "New Employee Added");
+
+            NameTextField.setText("");
+            EmpIdTextField.setText("");
+            AgeTextField.setText("");
+            GenderTextField.setText("");
+            StartDateTextField.setText("");
+            LevelTextField.setText("");
+            TeamInfoTextField.setText("");
+            PositionTitleTextField.setText("");
+            PhoneNumberTextField.setText("");
+            EmailTextField.setText("");
+            imgDisplayLabel.setIcon(null);
+            imgDisplayLabel.revalidate();
+        }
         
         
     }//GEN-LAST:event_SaveButtonActionPerformed
