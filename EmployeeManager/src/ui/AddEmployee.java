@@ -385,7 +385,7 @@ public class AddEmployee extends javax.swing.JPanel {
             return;
         }
         
-        if(validate("(2[0-9]|[3-5][0-9]|60)", Age)){
+        if(validate("(2[0-9]|[3-5][0-9]|60)", Age) && !(Age.isEmpty())){
             
         }
         else{
@@ -394,7 +394,7 @@ public class AddEmployee extends javax.swing.JPanel {
             return;
         }
         
-        if(validate("M|F|O", Gender)){
+        if(validate("M|F|O", Gender) && !(Gender.isEmpty())){
             
         }
         else{
@@ -403,7 +403,7 @@ public class AddEmployee extends javax.swing.JPanel {
             return;
         }
         
-        if(validate("^(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[13-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:29(\\/|-|\\.)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$", StartDate)){
+        if(validate("^(?:(?:31(\\/|-|\\.)(?:0?[13578]|1[02]))\\1|(?:(?:29|30)(\\/|-|\\.)(?:0?[13-9]|1[0-2])\\2))(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$|^(?:29(\\/|-|\\.)0?2\\3(?:(?:(?:1[6-9]|[2-9]\\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\\d|2[0-8])(\\/|-|\\.)(?:(?:0?[1-9])|(?:1[0-2]))\\4(?:(?:1[6-9]|[2-9]\\d)?\\d{2})$", StartDate) && !(StartDate.isEmpty())){
             
         }
         else{
@@ -412,7 +412,7 @@ public class AddEmployee extends javax.swing.JPanel {
             return;
         }
         
-        if(validate("([0-5])", Level)){
+        if(validate("([0-5])", Level) && !(Level.isEmpty())){
             
         }
         else{
@@ -421,7 +421,7 @@ public class AddEmployee extends javax.swing.JPanel {
             return;
         }
         
-        if(validate("^[A-Z].*", TeamInfo)){
+        if(validate("^[A-Z].*", TeamInfo) && !(TeamInfo.isEmpty())){
             
         }
         else{
@@ -430,7 +430,7 @@ public class AddEmployee extends javax.swing.JPanel {
             return;
         }
         
-        if(validate("^[A-Z].*", PostionTitle)){
+        if(validate("^[A-Z].*", PostionTitle) && !(PostionTitle.isEmpty())){
             
         }
         else{
@@ -439,7 +439,7 @@ public class AddEmployee extends javax.swing.JPanel {
             return;
         }
         
-        if(validate("[0-9]+", CellPhoneNumber)){
+        if(validate("[0-9]+", CellPhoneNumber) && !(CellPhoneNumber.isEmpty())){
             
         }
         else{
@@ -448,7 +448,7 @@ public class AddEmployee extends javax.swing.JPanel {
             return;
         }
         
-        if(validate("^(.+)@(.+)$", email)){
+        if(validate("^(.+)@(.+)$", email) && !(email.isEmpty())){
             
         }
         
