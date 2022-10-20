@@ -327,7 +327,7 @@ public class ViewEmployees extends javax.swing.JPanel {
         }
         
         DefaultTableModel model = (DefaultTableModel) EmployeeTable.getModel();
-        Employee selectedEmployee = (Employee) model.getValueAt(selectedRowIndex,0);
+        Employee selectedEmployee = (Employee) EmployeeTable.getValueAt(selectedRowIndex,0);
         EmployeeList.deleteEmployee(selectedEmployee);
         JOptionPane.showMessageDialog(this, "Employee deleted");
 //        
