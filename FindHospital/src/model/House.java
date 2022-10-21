@@ -4,7 +4,7 @@
  */
 package model;
 
-import java.util.ArrayList;
+
 
 /**
  *
@@ -12,10 +12,8 @@ import java.util.ArrayList;
  */
 public class House {
     private int HouseNumber;
-    private String CommunityName;
-    private String CityName;
-    private int ZipCode;
-    private ArrayList<Person> PersonList;
+    private Community community;
+    
 
     public int getHouseNumber() {
         return HouseNumber;
@@ -25,47 +23,16 @@ public class House {
         this.HouseNumber = HouseNumber;
     }
 
-    public String getCommunityName() {
-        return CommunityName;
+    public Community getCommunity() {
+        return community;
     }
 
-    public void setCommunityName(String CommunityName) {
-        this.CommunityName = CommunityName;
+    public void setCommunity(Community community) {
+        this.community = community;
     }
 
-    public String getCityName() {
-        return CityName;
-    }
-
-    public void setCityName(String CityName) {
-        this.CityName = CityName;
-    }
-
-    public int getZipCode() {
-        return ZipCode;
-    }
-
-    public void setZipCode(int ZipCode) {
-        this.ZipCode = ZipCode;
-    }
-
-    public ArrayList<Person> getPersonList() {
-        return PersonList;
-    }
-
-    public void setPersonList(ArrayList<Person> PersonList) {
-        this.PersonList = PersonList;
-    }
     
+
     
-    public Person addNewMember(){
-        Person newMember = new Person();
-        PersonList.add(newMember);
-        return newMember;
-    }
-    
-    public void deleteMember(Person member){
-        PersonList.remove(member);
-    }
     
 }

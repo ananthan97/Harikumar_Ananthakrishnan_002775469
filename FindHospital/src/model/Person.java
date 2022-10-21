@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package model;
+
 /**
  *
  * @author Ananthakrishnan H
@@ -10,10 +11,7 @@ package model;
 public class Person {
     private int Uid;
     private String Name;
-    private int HouseNumber;
-    private String CommunityName;
-    private String CityName;
-    private int ZipCode;
+    private House house;
 
     public int getUid() {
         return Uid;
@@ -31,36 +29,12 @@ public class Person {
         this.Name = Name;
     }
 
-    public int getHouseNumber() {
-        return HouseNumber;
+    public House getHouse() {
+        return house;
     }
 
-    public void setHouseNumber(int HouseNumber) {
-        this.HouseNumber = HouseNumber;
-    }
-
-    public String getCommunityName() {
-        return CommunityName;
-    }
-
-    public void setCommunityName(String CommunityName) {
-        this.CommunityName = CommunityName;
-    }
-
-    public String getCityName() {
-        return CityName;
-    }
-
-    public void setCityName(String CityName) {
-        this.CityName = CityName;
-    }
-
-    public int getZipCode() {
-        return ZipCode;
-    }
-
-    public void setZipCode(int ZipCode) {
-        this.ZipCode = ZipCode;
+    public void setHouse(House house) {
+        this.house = house;
     }
     
 }
