@@ -11,19 +11,16 @@ import java.util.ArrayList;
  * @author Ananthakrishnan H
  */
 public class Community {
-    private int CommunityId;
     private String CommunityName;
     private ArrayList<House> HouseList = new ArrayList<House>();
     private HospitalDirectory hospitalList;
-    private int zipcode;
+    private String cityName;
 
-    public int getCommunityId() {
-        return CommunityId;
+    public Community() {
+        this.HouseList = new ArrayList<House>();
+        this.hospitalList = new HospitalDirectory();
     }
 
-    public void setCommunityId(int CommunityId) {
-        this.CommunityId = CommunityId;
-    }
     
     
 
@@ -50,15 +47,25 @@ public class Community {
     public void setHospitalList(HospitalDirectory hospitalList) {
         this.hospitalList = hospitalList;
     }
-    
-    
 
-    public int getZipcode() {
-        return zipcode;
+    public String getCityName() {
+        return cityName;
     }
 
-    public void setZipcode(int zipcode) {
-        this.zipcode = zipcode;
+    public void setCityName(String cityName) {
+        this.cityName = cityName;
+    }
+    
+    
+    
+    public House addNewHouse(){
+        House newHouse = new House();
+        HouseList.add(newHouse);
+        return newHouse;
+    }
+    
+    public void DeleteHouse(House house){
+        HouseList.remove(house);
     }
     
     

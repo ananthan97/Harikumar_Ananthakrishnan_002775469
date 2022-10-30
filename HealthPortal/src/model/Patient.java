@@ -11,9 +11,13 @@ package model;
 public class Patient {
     private int PersonId;
     private int PatientId;
+    private EncounterHistory encounterHistory;
 
+    
+    
     public Patient(Person person) {
         this.PersonId = person.getPersonId();
+        this.encounterHistory = new EncounterHistory();
     }
     
     public int getPersonId() {
@@ -30,6 +34,14 @@ public class Patient {
 
     public void setPatientId(int PatientId) {
         this.PatientId = PatientId;
+    }
+    
+    public EncounterHistory getEncounterHistory() {
+        return encounterHistory;
+    }
+
+    public void setEncounterHistory(EncounterHistory encounterHistory) {
+        this.encounterHistory = encounterHistory;
     }
     
     

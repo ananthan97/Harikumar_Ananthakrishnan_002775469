@@ -25,7 +25,16 @@ public class PatientDirectory {
         this.patientsList = patientsList;
     }
     
+    public Patient addNewPatient(Person person){
+        Patient newPatient = new Patient(person);
+        patientsList.add(newPatient);
+        return newPatient;
+    }
     
+    
+    public void deletePatient(Patient patient){
+        patientsList.remove(patient);
+    }
     
     
 }

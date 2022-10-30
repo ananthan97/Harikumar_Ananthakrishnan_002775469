@@ -25,5 +25,16 @@ public class DoctorDirectory {
         this.doctorsList = doctorsList;
     }
     
+    public Doctor addNewDoctor(Person person){
+        Doctor newDoctor = new Doctor(person);
+        doctorsList.add(newDoctor);
+        return newDoctor;
+        
+    }
+    
+    public void deleteDoctor(Doctor doctor){
+        doctorsList.remove(doctor);
+    }
+    
     
 }

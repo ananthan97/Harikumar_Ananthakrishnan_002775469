@@ -9,18 +9,16 @@ package model;
  * @author Ananthakrishnan H
  */
 public class Hospital {
-    private int HospitalId;
     private String HospitalName;
     private DoctorDirectory DoctorsList;
     private PatientDirectory patientDirectory;
 
-    public int getHospitalId() {
-        return HospitalId;
+    public Hospital() {
+        this.DoctorsList = new DoctorDirectory();
+        this.patientDirectory = new PatientDirectory();
     }
 
-    public void setHospitalId(int HospitalId) {
-        this.HospitalId = HospitalId;
-    }
+    
 
     public String getHospitalName() {
         return HospitalName;

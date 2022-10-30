@@ -13,9 +13,10 @@ public class Encounter {
     private int PatientId;
     private VitalSigns vitalSigns;
 
-    public Encounter(Doctor doctor, Patient patient) {
+    public Encounter(Doctor doctor, Patient patient,VitalSigns vitalSigns) {
         this.DocId = doctor.getDoctorId();
         this.PatientId = patient.getPatientId();
+        this.vitalSigns = vitalSigns;
     }
     
     

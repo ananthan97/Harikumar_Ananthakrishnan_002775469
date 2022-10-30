@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @author Ananthakrishnan H
  */
 public class EncounterHistory {
-    ArrayList<Encounter> EncounterList;
+    private ArrayList<Encounter> EncounterList;
 
     public EncounterHistory() {
         this.EncounterList = new ArrayList<Encounter>();
@@ -24,6 +24,17 @@ public class EncounterHistory {
 
     public void setEncounterList(ArrayList<Encounter> EncounterList) {
         this.EncounterList = EncounterList;
+    }
+    
+    public Encounter addNewEncounter(Doctor doctor, Patient patient,VitalSigns vitalSigns){
+        Encounter newEncounter = new Encounter(doctor,patient,vitalSigns);
+        EncounterList.add(newEncounter);
+        return newEncounter;
+        
+    }
+    
+    public void deleteEncounter(Encounter encounter){
+        EncounterList.remove(encounter);
     }
     
 }

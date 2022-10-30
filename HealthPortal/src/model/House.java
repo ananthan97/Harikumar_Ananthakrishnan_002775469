@@ -9,5 +9,35 @@ package model;
  * @author Ananthakrishnan H
  */
 public class House {
+    private int HouseNumber;
+    private String CommunityName;
+    private String CityName;
+
+    public int getHouseNumber() {
+        return HouseNumber;
+    }
+
+    public void setHouseNumber(int HouseNumber) {
+        this.HouseNumber = HouseNumber;
+    }
+
+    public String getCommunityName() {
+        return CommunityName;
+    }
+
+    public void setCommunityName(String CommunityName) {
+        this.CommunityName = CommunityName;
+    }
+
+    public String getCityName() {
+        return CityName;
+    }
+
+    public void setCityName(String CityName) {
+        this.CityName = CityName;
+    }
+
+    
+    
     
 }

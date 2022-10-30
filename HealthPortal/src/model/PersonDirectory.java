@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * @author Ananthakrishnan H
  */
 public class PersonDirectory {
-    ArrayList<Person> PersonList = new ArrayList<Person>();
+    private ArrayList<Person> PersonList = new ArrayList<Person>();
 
     public PersonDirectory() {
         this.PersonList = new ArrayList<Person>();
@@ -27,5 +27,13 @@ public class PersonDirectory {
         this.PersonList = PersonList;
     }
     
+    public Person addNewPerson(){
+        Person newPerson = new Person();
+        PersonList.add(newPerson);
+        return newPerson;
+    }
     
+    public void deletePerson(Person person){
+        PersonList.remove(person);
+    }
 }

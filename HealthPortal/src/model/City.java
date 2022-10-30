@@ -11,16 +11,15 @@ import java.util.ArrayList;
  * @author Ananthakrishnan H
  */
 public class City {
-    private int CityId;
+    private String CityName;
     private ArrayList<Community> CommunityList = new ArrayList<Community>();
 
-    public int getCityId() {
-        return CityId;
+    public City(String CityName) {
+        this.CityName = CityName;
+        this.CommunityList = new ArrayList<Community>();
     }
-
-    public void setCityId(int CityId) {
-        this.CityId = CityId;
-    }
+    
+    
 
     public ArrayList<Community> getCommunityList() {
         return CommunityList;
@@ -28,6 +27,24 @@ public class City {
 
     public void setCommunityList(ArrayList<Community> CommunityList) {
         this.CommunityList = CommunityList;
+    }
+
+    public String getCityName() {
+        return CityName;
+    }
+
+    public void setCityName(String CityName) {
+        this.CityName = CityName;
+    }
+    
+    public Community addNewCommunity(){
+        Community NewCommunity = new Community();
+        CommunityList.add(NewCommunity);
+        return NewCommunity;
+    }
+    
+    public void deleteCommunity(Community community){
+        CommunityList.remove(community);
     }
     
 }

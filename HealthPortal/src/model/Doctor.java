@@ -11,9 +11,11 @@ package model;
 public class Doctor {
     private int PersonId;
     private int DoctorId;
-
+    private EncounterHistory encounterHistory;
+    
     public Doctor(Person person) {
         this.PersonId = person.getPersonId();
+        this.encounterHistory = new EncounterHistory();
     }
     
     
@@ -33,5 +35,14 @@ public class Doctor {
     public void setDoctorId(int DoctorId) {
         this.DoctorId = DoctorId;
     }
+
+    public EncounterHistory getEncounterHistory() {
+        return encounterHistory;
+    }
+
+    public void setEncounterHistory(EncounterHistory encounterHistory) {
+        this.encounterHistory = encounterHistory;
+    }
+    
     
 }

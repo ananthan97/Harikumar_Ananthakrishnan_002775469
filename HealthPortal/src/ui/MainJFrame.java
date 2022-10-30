@@ -4,6 +4,8 @@
  */
 package ui;
 
+import model.HealthPortalSystem;
+
 /**
  *
  * @author Ananthakrishnan H
@@ -13,8 +15,10 @@ public class MainJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MainJFrame
      */
+    HealthPortalSystem system;
     public MainJFrame() {
         initComponents();
+        system = new HealthPortalSystem();
     }
 
     /**
