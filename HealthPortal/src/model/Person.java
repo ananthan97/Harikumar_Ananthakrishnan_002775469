@@ -84,5 +84,9 @@ public class Person {
         this.house = house;
     }
     
-    
+    @Override
+    public String toString(){
+        String Id = String.valueOf(PersonId);
+        return Id;
+    }
 }

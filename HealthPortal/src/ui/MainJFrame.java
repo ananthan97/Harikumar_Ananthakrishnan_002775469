@@ -162,6 +162,9 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void HomeButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HomeButtonActionPerformed
         // TODO add your handling code here:
+        MainJFrame frame = new MainJFrame();
+        this.setVisible(false);
+        frame.setVisible(true);
     }//GEN-LAST:event_HomeButtonActionPerformed
 
     private void SystemAdminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SystemAdminButtonActionPerformed

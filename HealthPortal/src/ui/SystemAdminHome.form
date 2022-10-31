@@ -16,10 +16,16 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="389" max="-2" attributes="0"/>
-              <Component id="PersonButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="539" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace min="389" pref="389" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="PersonButton" max="32767" attributes="0"/>
+                  <Component id="PatientButton" max="32767" attributes="0"/>
+                  <Component id="DoctorButton" max="32767" attributes="0"/>
+                  <Component id="HospitalButton" pref="100" max="32767" attributes="0"/>
+                  <Component id="EncountersButton" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace pref="511" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -28,7 +34,15 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="133" max="-2" attributes="0"/>
               <Component id="PersonButton" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="844" max="32767" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="PatientButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="DoctorButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="HospitalButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="EncountersButton" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="680" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -40,6 +54,38 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PersonButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="PatientButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Patient"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PatientButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="DoctorButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Doctor"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="DoctorButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="HospitalButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Hospital"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="HospitalButtonActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="EncountersButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Encounters"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EncountersButtonActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

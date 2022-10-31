@@ -4,6 +4,7 @@
  */
 package ui;
 
+import java.awt.Dimension;
 import javax.swing.JFrame;
 
 /**
@@ -32,11 +33,43 @@ public class SystemAdminHome extends javax.swing.JPanel {
     private void initComponents() {
 
         PersonButton = new javax.swing.JButton();
+        PatientButton = new javax.swing.JButton();
+        DoctorButton = new javax.swing.JButton();
+        HospitalButton = new javax.swing.JButton();
+        EncountersButton = new javax.swing.JButton();
 
         PersonButton.setText("Person");
         PersonButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PersonButtonActionPerformed(evt);
+            }
+        });
+
+        PatientButton.setText("Patient");
+        PatientButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PatientButtonActionPerformed(evt);
+            }
+        });
+
+        DoctorButton.setText("Doctor");
+        DoctorButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DoctorButtonActionPerformed(evt);
+            }
+        });
+
+        HospitalButton.setText("Hospital");
+        HospitalButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HospitalButtonActionPerformed(evt);
+            }
+        });
+
+        EncountersButton.setText("Encounters");
+        EncountersButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EncountersButtonActionPerformed(evt);
             }
         });
 
@@ -46,15 +79,28 @@ public class SystemAdminHome extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(389, 389, 389)
-                .addComponent(PersonButton)
-                .addContainerGap(539, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(PersonButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(PatientButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(DoctorButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(HospitalButton, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                    .addComponent(EncountersButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(511, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(133, 133, 133)
                 .addComponent(PersonButton)
-                .addContainerGap(844, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(PatientButton)
+                .addGap(18, 18, 18)
+                .addComponent(DoctorButton)
+                .addGap(18, 18, 18)
+                .addComponent(HospitalButton)
+                .addGap(18, 18, 18)
+                .addComponent(EncountersButton)
+                .addContainerGap(680, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -63,11 +109,32 @@ public class SystemAdminHome extends javax.swing.JPanel {
         SystemAdminPersonScreen systemAdminPersonScreen = new SystemAdminPersonScreen();
         frame = new JFrame("SystemAdminPerson");
         frame.add(systemAdminPersonScreen);
+        frame.setMinimumSize(new Dimension(1000,1000));
         frame.show();
     }//GEN-LAST:event_PersonButtonActionPerformed
 
+    private void PatientButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PatientButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PatientButtonActionPerformed
+
+    private void DoctorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoctorButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DoctorButtonActionPerformed
+
+    private void HospitalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HospitalButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_HospitalButtonActionPerformed
+
+    private void EncountersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EncountersButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EncountersButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton DoctorButton;
+    private javax.swing.JButton EncountersButton;
+    private javax.swing.JButton HospitalButton;
+    private javax.swing.JButton PatientButton;
     private javax.swing.JButton PersonButton;
     // End of variables declaration//GEN-END:variables
 }
