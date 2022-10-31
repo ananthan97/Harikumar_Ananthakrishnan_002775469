@@ -119,6 +119,11 @@ public class SystemAdminHome extends javax.swing.JPanel {
 
     private void DoctorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DoctorButtonActionPerformed
         // TODO add your handling code here:
+        SystemAdminDoctorScreen systemAdminDoctorScreen = new SystemAdminDoctorScreen();
+        frame = new JFrame("SystemAdminDoctorScreen");
+        frame.add(systemAdminDoctorScreen);
+        frame.setMinimumSize(new Dimension(1000,1000));
+        frame.show();
     }//GEN-LAST:event_DoctorButtonActionPerformed
 
     private void HospitalButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HospitalButtonActionPerformed
