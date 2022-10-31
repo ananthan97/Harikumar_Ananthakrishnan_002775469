@@ -31,17 +31,6 @@ public class SystemAdminPersonScreen extends javax.swing.JPanel {
         initComponents();
         
         system = new HealthPortalSystem();
-        system.addNewCity("New item");
-        City testCity = system.addNewCity("New City");
-        Community testCommunity = testCity.addNewCommunity();
-        testCommunity.setCommunityName("New Community");
-        House testHouse = testCommunity.addNewHouse();
-        testHouse.setHouseNumber(25);
-        City testCity2 = system.addNewCity("Old City");
-        Community testCommunity2 = testCity2.addNewCommunity();
-        testCommunity2.setCommunityName("Old Community");
-        House testHouse2 = testCommunity2.addNewHouse();
-        testHouse2.setHouseNumber(35);
         ArrayList<City> cityDirectory = system.getCityDirectory();
 //        cityDirectory.get(0).addNewCommunity("");
         for(City value : cityDirectory){
