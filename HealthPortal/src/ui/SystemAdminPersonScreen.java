@@ -691,7 +691,7 @@ public class SystemAdminPersonScreen extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) tblPersonView.getModel();
         Person selectedPerson = (Person) tblPersonView.getValueAt(selectedRowIndex, 0);
         system.getPersonDirectory().deletePerson(selectedPerson);
-        JOptionPane.showMessageDialog(this, "Employee deleted");
+        JOptionPane.showMessageDialog(this, "Person deleted");
         populateTable();
     }//GEN-LAST:event_btnPersonDeleteActionPerformed
 
@@ -714,12 +714,12 @@ public class SystemAdminPersonScreen extends javax.swing.JPanel {
         txtViewPersonHouse.setText(String.valueOf(selectedPerson.getHouse().getHouseNumber()));
         txtViewPersonCommunity.setText(selectedPerson.getHouse().getCommunityName());
         txtViewPersonCity.setText(selectedPerson.getHouse().getCityName());
-        System.out.println(String.valueOf(selectedPerson.getPersonId()));
+        
     }//GEN-LAST:event_btnPersonViewActionPerformed
 
     private void txtViewPersonIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtViewPersonIDActionPerformed
         // TODO add your handling code here:
-
+        
     }//GEN-LAST:event_txtViewPersonIDActionPerformed
 
     private void txtViewPersonFirstNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtViewPersonFirstNameActionPerformed
@@ -795,7 +795,6 @@ public class SystemAdminPersonScreen extends javax.swing.JPanel {
         model.setColumnIdentifiers(newIdentifiers);
         model.setRowCount(0);
         for(Person person : system.getPersonDirectory().getPersonList()){
-            System.out.println("Hello World");
             Object[] row = new Object[6];
             row[0] = person;
             row[1] = person.getFirstName();

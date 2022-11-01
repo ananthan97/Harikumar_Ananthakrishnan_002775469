@@ -13,8 +13,9 @@ public class Doctor {
     private int DoctorId;
     private EncounterHistory encounterHistory;
     
-    public Doctor(Person person) {
-        this.PersonId = person.getPersonId();
+    public Doctor(int personId, int doctorId) {
+        this.PersonId = personId;
+        this.DoctorId = doctorId;
         this.encounterHistory = new EncounterHistory();
     }
     

@@ -25,8 +25,8 @@ public class DoctorDirectory {
         this.doctorsList = doctorsList;
     }
     
-    public Doctor addNewDoctor(Person person){
-        Doctor newDoctor = new Doctor(person);
+    public Doctor addNewDoctor(int personId, int doctorId){
+        Doctor newDoctor = new Doctor(personId, doctorId);
         doctorsList.add(newDoctor);
         return newDoctor;
         
